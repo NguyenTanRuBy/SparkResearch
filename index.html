@@ -1,10 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>
-    Spark Research
-  </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spark Research</title>
 </head>
 <body>
-  my body
+	<div style="width: 20%; float: left">
+		<h3>Spark - Map / Reduce</h3>
+	</div>
+	<div style = "width: 50%; float: left; margin-top: 20px">
+		<div>
+		<p>Apache Spark bắt đầu tại University of California, Berkeley vào năm 2009 với tên là "Spark research project", được giới thiệu public lần đầu tiên sau một năm (2010) trong một bài báo có tựa đề “Spark: Cluster Computing with Working Sets” viết bởi 5 nhà nghiên cứu của AMPlab - UC Berkeley.</p>
+		</div>
+		<div>
+			<img src="./static/image/spark_core.jpg" width="100%" height="100%" alt="spark img">
+		</div>
+		<div>
+			Spark Core: là engine thực thi chung làm nền tảng cho Spark. Tất cả các chức năng khác được xây dựng dựa trên base là Spark Core. Nó cung cấp khả năng tính toán trên bộ nhớ RAM và cả bộ dữ liệu tham chiếu trong các hệ thống external storage.
+			<ul style="list-style-type:square">
+				
+				<li>
+					Spark SQL: là một thành phần nằm trên Spark Core, giới thiệu một khái niệm trừu tượng hóa dữ liệu mới gọi là SchemaRDD, cung cấp hỗ trợ cho dữ liệu có cấu trúc và bán cấu trúc.
+				</li>
+				<li>
+					Spark Streaming: tận dụng khả năng lập lịch memory-base của Spark Core để thực hiện streaming analytics. Nó lấy dữ liệu theo mini-batches và thực hiện các phép biến đổi RDD (Bộ dữ liệu phân tán có khả năng phục hồi) trên các mini-batches dữ liệu đó.
+				</li>
+				<li>
+					MLlib (Machine Learning Library): là một framework machine learning phân tán trên Spark tận dụng khả năng tính toán tốc độ cao nhờ distributed memory-based của kiến ​​trúc Spark.
+				</li>
+				<li>
+					GraphX: ​​là một framework xử lý đồ thị phân tán. Nó cung cấp một API để thực hiện tính toán biểu đồ có thể mô hình hóa các biểu đồ do người dùng xác định bằng cách sử dụng API đã được tối ưu sẵn.
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div style="width: 20%; float: left">
+	</div>
 </body>
 </html>
