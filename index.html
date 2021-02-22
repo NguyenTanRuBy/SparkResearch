@@ -10,32 +10,97 @@
 		<h3>Spark - Map / Reduce</h3>
 	</div>
 	<div style = "width: 50%; float: left; margin-top: 20px">
-		<div>
-		<p>Apache Spark bắt đầu tại University of California, Berkeley vào năm 2009 với tên là "Spark research project", được giới thiệu public lần đầu tiên sau một năm (2010) trong một bài báo có tựa đề “Spark: Cluster Computing with Working Sets” viết bởi 5 nhà nghiên cứu của AMPlab - UC Berkeley.</p>
+		<div id="sparkInfo">
+			<div>
+				<h2>I. Spark Core</h2>
+			</div>
+			<div>
+				<p>Apache Spark bắt đầu tại University of California, Berkeley vào năm 2009 với tên là "Spark research project", được giới thiệu public lần đầu tiên sau một năm (2010) trong một bài báo có tựa đề “Spark: Cluster Computing with Working Sets” viết bởi 5 nhà nghiên cứu của AMPlab - UC Berkeley.</p>
+			</div>
+			<div>
+				<img src="./static/image/spark_core.jpg" width="100%" height="100%" alt="spark img">
+			</div>
+			<div>
+				Spark Core: là engine thực thi chung làm nền tảng cho Spark. Tất cả các chức năng khác được xây dựng dựa trên base là Spark Core. Nó cung cấp khả năng tính toán trên bộ nhớ RAM và cả bộ dữ liệu tham chiếu trong các hệ thống external storage.
+				<ul style="list-style-type:square">
+					
+					<li>
+						Spark SQL: là một thành phần nằm trên Spark Core, giới thiệu một khái niệm trừu tượng hóa dữ liệu mới gọi là SchemaRDD, cung cấp hỗ trợ cho dữ liệu có cấu trúc và bán cấu trúc.
+					</li>
+					<li>
+						Spark Streaming: tận dụng khả năng lập lịch memory-base của Spark Core để thực hiện streaming analytics. Nó lấy dữ liệu theo mini-batches và thực hiện các phép biến đổi RDD (Bộ dữ liệu phân tán có khả năng phục hồi) trên các mini-batches dữ liệu đó.
+					</li>
+					<li>
+						MLlib (Machine Learning Library): là một framework machine learning phân tán trên Spark tận dụng khả năng tính toán tốc độ cao nhờ distributed memory-based của kiến ​​trúc Spark.
+					</li>
+					<li>
+						GraphX: ​​là một framework xử lý đồ thị phân tán. Nó cung cấp một API để thực hiện tính toán biểu đồ có thể mô hình hóa các biểu đồ do người dùng xác định bằng cách sử dụng API đã được tối ưu sẵn.
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="sparkContext">
+			<div>
+				<h2>II. Spark Context</h2>
+			</div>
+			<div>
+				<img src="./static/image/spark_context.jpg" width="100%" height="100%" alt="sparkContext">
+			</div>
+			<div>
+				<ul>
+					<li>Master – Tên URL kết nối.</li>
+					<li>appName – Tên ứng dụng.</li>
+					<li>sparkHome – Nơi lưu trữ spark.</li>
+					<li>pyFiles −  File .zip hoặc .py gửi đến cụm kết nối và được thêm vào PYTHONPATH.</li>
+					<li>Environment – Các nút hoặc các biến môi trường</li>
+					<li>batchSize – Số lươgnj đối tượng Python được biểu diễn dưới dạng 1 đối tượng Java duy nhất. Ghi 1 để tắt, 0 để tự động lựa chọn kích thước dựa trên kích thước đối tượng hoặc để giá trị -1 để sử dụng kích thước không giới hạn.</li>
+					<li>Serializer – Tuần tự hoá RDD.</li>
+					<li>Conf – đối tượng Spark Conf để cài đặt các thuộc tính của Spark.</li>
+					<li>Gateway – Sử dụng gateway đã tồn tại và JVM hoặc tạo mới JVM.</li>
+					<li>JSC − The JavaSparkContext instance.</li>
+					<li>profiler_cls – Lớp thông tin tuỳ chỉnh để tạo thông tin cá nhân (giá trị mặc định là pyspark.profiler.BasicProfiler).</li>
+				</ul>
+			</div>
 		</div>
 		<div>
-			<img src="./static/image/spark_core.jpg" width="100%" height="100%" alt="spark img">
-		</div>
-		<div>
-			Spark Core: là engine thực thi chung làm nền tảng cho Spark. Tất cả các chức năng khác được xây dựng dựa trên base là Spark Core. Nó cung cấp khả năng tính toán trên bộ nhớ RAM và cả bộ dữ liệu tham chiếu trong các hệ thống external storage.
-			<ul style="list-style-type:square">
-				
-				<li>
-					Spark SQL: là một thành phần nằm trên Spark Core, giới thiệu một khái niệm trừu tượng hóa dữ liệu mới gọi là SchemaRDD, cung cấp hỗ trợ cho dữ liệu có cấu trúc và bán cấu trúc.
-				</li>
-				<li>
-					Spark Streaming: tận dụng khả năng lập lịch memory-base của Spark Core để thực hiện streaming analytics. Nó lấy dữ liệu theo mini-batches và thực hiện các phép biến đổi RDD (Bộ dữ liệu phân tán có khả năng phục hồi) trên các mini-batches dữ liệu đó.
-				</li>
-				<li>
-					MLlib (Machine Learning Library): là một framework machine learning phân tán trên Spark tận dụng khả năng tính toán tốc độ cao nhờ distributed memory-based của kiến ​​trúc Spark.
-				</li>
-				<li>
-					GraphX: ​​là một framework xử lý đồ thị phân tán. Nó cung cấp một API để thực hiện tính toán biểu đồ có thể mô hình hóa các biểu đồ do người dùng xác định bằng cách sử dụng API đã được tối ưu sẵn.
-				</li>
-			</ul>
+			<div>
+				<h2>III. Spark RDD (Resilient Distributed Dataset)</h2>
+			</div>
+			<div>
+				<p>Resilient Distributed Dataset là tập tài liệu phân phối có khả năng phục hồi</p>
+			</div>
+			<div>
+				<img src="./static/image/spark_rdd.png" width="100%" height="100%" alt="sparkContext">
+			</div>
+			<div>
+				<p>Câu lệnh trên tạo ra 1 mảng các string và được chia thành các phần bằng nhau dựa vào khai báo của Spark Context</p>
+			</div>
+			<div>
+				<img src="./static/image/spark_rdd_foreach.png" width="100%" height="100%" alt="sparkContext">
+			</div>
+			<div>
+				<p>Kết quả sau khi chạy lệnh foreach: </p>
+			</div>
+			<div>
+				<img src="./static/image/spark_rdd_foreach_result.png" width="100%" height="100%" alt="sparkContext">
+			</div>
+			<div>
+				<p>Collect: </p>
+			</div>
+			<div>
+				<img src="./static/image/spark_rdd_collect.png" width="100%" height="100%" alt="sparkContext">
+			</div>
+			<div>
+				<p>Sau khi chạy lệnh collect(): </p>
+			</div>
+			<div>
+				<img src="./static/image/spark_rdd_collect_result.png" width="100%" height="100%" alt="sparkContext">
+			</div>
+
 		</div>
 	</div>
 	<div style="width: 20%; float: left">
 	</div>
+	<div id="footer" style="height: 150px; width: 100%; ;float: left"></div>
 </body>
 </html>
